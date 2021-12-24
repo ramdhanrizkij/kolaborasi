@@ -3,6 +3,7 @@ package handler
 import (
 	"github.com/gin-gonic/gin"
 	"kolaborasi/dto"
+	"kolaborasi/entity"
 	"kolaborasi/helper"
 	"kolaborasi/service"
 	"net/http"
@@ -53,5 +54,28 @@ func (h *campaignHandler) GetCampaignDetail(c *gin.Context) {
 		return
 	}
 	response := helper.APIResponse("success", "Get Campaign Detail", http.StatusOK, helper.FormatCampaignDetail(campaign))
+	c.JSON(http.StatusOK, response)
+}
+
+func (h *campaignHandler) CreateCampaign(c *gin.Context) {
+	var input dto.CreateCampaignDTO
+	err := c.ShouldBindJSON(&input)
+	if err != nil {
+		errors := gin.H{"errors": helper.FormatValidationError(err)}
+		response := helper.APIResponse("error", "Failed to create campaign", http.StatusUnprocessableEntity, errors)
+		c.JSON(http.StatusUnprocessableEntity, response)
+		return
+	}
+
+	currentUser := c.MustGet("currentUser").(entity.User)
+	input.User = currentUser
+	newCampaign, err := h.campaignService.CreateCampaign(input)
+	if err != nil {
+		response := helper.APIResponse("error", "Failed to create campaign", http.StatusBadRequest, err.Error())
+		c.JSON(http.StatusBadRequest, response)
+		return
+	}
+
+	response := helper.APIResponse("success", "Campaign Successfully Created", http.StatusOK, helper.FormatCampaign(newCampaign))
 	c.JSON(http.StatusOK, response)
 }

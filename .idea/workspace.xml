@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="559a97d9-1c14-4d60-a2c6-d88aa62d0f07" name="Changes" comment="" />
+    <list default="true" id="559a97d9-1c14-4d60-a2c6-d88aa62d0f07" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/kolaborasi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kolaborasi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dto/campaign.go" beforeDir="false" afterPath="$PROJECT_DIR$/dto/campaign.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/campaign.handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handler/campaign.handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/campaign.repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/repository/campaign.repository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/campaign.service.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/campaign.service.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +29,9 @@
     </option>
   </component>
   <component name="GOROOT" url="file:///usr/local/Cellar/go/1.17.5/libexec" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
       <filtered-out-file-type name="LOCAL_BRANCH" />
@@ -34,6 +47,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="22aJk7rCqmW3VAh6kRzQ4ApyagM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />

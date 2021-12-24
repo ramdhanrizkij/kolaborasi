@@ -42,6 +42,7 @@ func main() {
 	campaignAPI := r.Group("v1/campaign")
 	campaignAPI.GET("/", campaignHandler.GetCampaignData)
 	campaignAPI.GET("/:id", campaignHandler.GetCampaignDetail)
+	campaignAPI.POST("/", authMiddleware(authService, userService), campaignHandler.CreateCampaign)
 
 	r.Run(":8000")
 }

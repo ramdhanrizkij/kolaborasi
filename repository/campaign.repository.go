@@ -9,6 +9,7 @@ type CampaignRepository interface {
 	FindAllCampaign() ([]entity.Campaign, error)
 	FindByUserID(userID int) ([]entity.Campaign, error)
 	FindById(ID int) (entity.Campaign, error)
+	SaveCampaign(campaign entity.Campaign) (entity.Campaign, error)
 }
 type campaignRepository struct {
 	db *gorm.DB
@@ -42,6 +43,14 @@ func (r *campaignRepository) FindById(ID int) (entity.Campaign, error) {
 	err := r.db.Preload("CampaignImages").Preload("User").Find(&campaign, ID)
 	if err != nil {
 		return campaign, err.Error
+	}
+	return campaign, nil
+}
+
+func (r *campaignRepository) SaveCampaign(campaign entity.Campaign) (entity.Campaign, error) {
+	err := r.db.Create(&campaign).Error
+	if err != nil {
+		return campaign, err
 	}
 	return campaign, nil
 }
